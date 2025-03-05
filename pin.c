@@ -5,6 +5,30 @@
 int pin = 1234;
 float balance = 1000.0;
 
+void checkBalance() {
+    printf("Your balance is: $%.2f\n", balance);
+}
+
+void depositMoney() {
+    float amount;
+    printf("Enter amount to deposit: ");
+    scanf("%f", &amount);
+    balance += amount;
+    printf("\nDeposit successful. New balance: $%.2f\n", balance);
+}
+
+void withdrawMoney() {
+    float amount;
+    printf("Enter amount to withdraw: ");
+    scanf("%f", &amount);
+    if (amount <= balance) {
+        balance -= amount;
+        printf("\nWithdrawal successful. New balance: $%.2f\n", balance);
+    } else {
+        printf("\nInsufficient balance.\n");
+    }
+}
+
 int main() {
     int user_pin, choice;
     
